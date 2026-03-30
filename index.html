@@ -19,7 +19,7 @@
   <meta name="twitter:description" content="Best barber West Village for fades, men's cuts, and hot towel shaves." />
   <meta name="theme-color" content="#0f0f10" />
   <link rel="canonical" href="https://gafivestarsbarbershop.com/" />
-  <link rel="preload" as="image" href="./gallery1.jpg" />
+  <link rel="preload" as="image" href="./background.avif" type="image/avif" />
   <link rel="stylesheet" href="./styles.css" />
   <script type="application/ld+json">
   {
@@ -71,6 +71,7 @@
       </button>
 
       <nav id="siteNav" class="site-nav" aria-label="Main Navigation">
+        <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#gallery">Gallery</a>
@@ -84,7 +85,10 @@
   <main>
     <section class="hero reveal" id="home" aria-label="Hero">
       <div class="hero-media">
-        <img src="./gallery1.jpg" alt="Barber cutting hair in New York barbershop" fetchpriority="high" />
+        <picture>
+          <source srcset="./background.avif" type="image/avif" />
+          <img src="./gallery1.jpg" alt="Barber cutting hair in New York barbershop" fetchpriority="high" />
+        </picture>
       </div>
       <div class="hero-overlay"></div>
       <div class="container hero-content">
@@ -177,15 +181,47 @@
         <h2>Inside The Chair</h2>
         <p class="section-intro">Real cuts, real clients, real West Village energy.</p>
 
-        <div class="gallery-grid">
-          <figure><img src="./gallery1.jpg" alt="Professional barber haircut in NYC" loading="lazy" /></figure>
-          <figure><img src="./gallery2.jpg" alt="Sharp fade cut at West Village barbershop" loading="lazy" /></figure>
-          <figure><img src="./gallery3.jpg" alt="Men's haircut NYC style" loading="lazy" /></figure>
-          <figure><img src="./gallery4.jpg" alt="Classic barber station interior" loading="lazy" /></figure>
-          <figure><img src="./gallery5.jpg" alt="Crisp line-up and beard shape" loading="lazy" /></figure>
-          <figure><img src="./gallery6.jpg" alt="Detailed scissor haircut finish" loading="lazy" /></figure>
-          <figure><img src="./gallery7.jpg" alt="Hot towel shave setup in New York" loading="lazy" /></figure>
-          <figure><img src="./gallery8.jpg" alt="Barbershop interior and grooming setup" loading="lazy" /></figure>
+        <div class="gallery-carousel" id="galleryCarousel" aria-roledescription="carousel" aria-label="Barbershop gallery carousel">
+          <div class="carousel-stage">
+            <button class="carousel-control prev" id="galleryPrev" type="button" aria-label="Previous image">
+              <span aria-hidden="true">&#10094;</span>
+            </button>
+
+            <div class="carousel-track-wrap" aria-live="polite">
+              <div class="carousel-track" id="galleryTrack">
+                <figure class="carousel-slide is-active">
+                  <img src="./gallery1.jpg" alt="Professional barber haircut in NYC" fetchpriority="high" />
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="./gallery2.jpg" alt="Sharp fade cut at West Village barbershop" loading="lazy" />
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="./gallery3.jpg" alt="Men's haircut NYC style" loading="lazy" />
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="./gallery4.jpg" alt="Classic barber station interior" loading="lazy" />
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="./gallery5.jpg" alt="Crisp line-up and beard shape" loading="lazy" />
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="./gallery6.jpg" alt="Detailed scissor haircut finish" loading="lazy" />
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="./gallery7.jpg" alt="Hot towel shave setup in New York" loading="lazy" />
+                </figure>
+                <figure class="carousel-slide">
+                  <img src="./gallery8.jpg" alt="Barbershop interior and grooming setup" loading="lazy" />
+                </figure>
+              </div>
+            </div>
+
+            <button class="carousel-control next" id="galleryNext" type="button" aria-label="Next image">
+              <span aria-hidden="true">&#10095;</span>
+            </button>
+          </div>
+
+          <div class="carousel-dots" id="galleryDots" aria-label="Choose gallery image"></div>
         </div>
       </div>
     </section>
