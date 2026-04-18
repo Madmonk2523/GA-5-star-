@@ -52,7 +52,7 @@ a {
 }
 
 .container {
-  width: min(1120px, 92vw);
+  width: min(1060px, 92vw);
   margin: 0 auto;
 }
 
@@ -80,7 +80,7 @@ a {
 }
 
 .nav-wrap {
-  min-height: 72px;
+  min-height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -135,7 +135,7 @@ a {
 .site-nav {
   position: absolute;
   left: 0;
-  top: 72px;
+  top: 64px;
   width: 100%;
   background: #0d0d0f;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -165,9 +165,9 @@ a {
   justify-content: center;
   border-radius: 999px;
   border: 1px solid transparent;
-  padding: 0.72rem 1.1rem;
+  padding: 0.62rem 1rem;
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease, color 220ms ease, border-color 220ms ease;
 }
 
@@ -188,13 +188,13 @@ a {
 }
 
 .btn-large {
-  font-size: 1rem;
-  padding: 0.9rem 1.5rem;
+  font-size: 0.95rem;
+  padding: 0.8rem 1.3rem;
 }
 
 .hero {
   position: relative;
-  min-height: 88vh;
+  min-height: 74vh;
   display: grid;
   align-items: center;
   overflow: hidden;
@@ -222,14 +222,14 @@ a {
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: 6.25rem 0 4rem;
+  padding: 4.75rem 0 3rem;
 }
 
 .eyebrow {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 1.5px;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   color: #ddd0b2;
 }
 
@@ -241,20 +241,20 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2rem, 7.5vw, 4.2rem);
+  font-size: clamp(1.75rem, 6vw, 3.2rem);
   max-width: 14ch;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 5.5vw, 2.5rem);
+  font-size: clamp(1.35rem, 4.5vw, 2rem);
 }
 
 h3 {
-  font-size: clamp(1.08rem, 3.5vw, 1.3rem);
+  font-size: clamp(1rem, 3vw, 1.14rem);
 }
 
 p {
-  margin: 0 0 1rem;
+  margin: 0 0 0.78rem;
   color: var(--muted);
 }
 
@@ -262,11 +262,11 @@ p {
   display: flex;
   gap: 0.65rem;
   flex-wrap: wrap;
-  margin-top: 1.1rem;
+  margin-top: 0.7rem;
 }
 
 .section {
-  padding: 4rem 0;
+  padding: 2.8rem 0;
 }
 
 .section-dark {
@@ -283,14 +283,14 @@ p {
 
 .split {
   display: grid;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 .about-card {
   background: linear-gradient(150deg, #171719, #111114);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1.2rem;
+  padding: 1rem;
   box-shadow: var(--shadow);
 }
 
@@ -304,15 +304,15 @@ p {
 
 .services-grid {
   display: grid;
-  gap: 0.9rem;
-  margin-top: 1.2rem;
+  gap: 0.75rem;
+  margin-top: 0.9rem;
 }
 
 .service-card {
   background: linear-gradient(165deg, #18181a, #121214);
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 1rem;
+  padding: 0.85rem;
   transition: transform 220ms ease, border-color 220ms ease;
 }
 
@@ -338,15 +338,64 @@ p {
   fill: #e5d2a8;
 }
 
-.reviews-grid {
+.reviews-carousel {
+  position: relative;
+  margin-top: 0.8rem;
+  padding: 0 2rem;
+}
+
+.reviews-track {
+  display: flex;
+  gap: 0.7rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.reviews-track::-webkit-scrollbar {
+  display: none;
+}
+
+.reviews-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(9, 9, 10, 0.62);
+  color: #fff;
   display: grid;
-  gap: 0.9rem;
+  place-items: center;
+  cursor: pointer;
+}
+
+.reviews-control.prev {
+  left: 0;
+}
+
+.reviews-control.next {
+  right: 0;
+}
+
+.reviews-control:hover {
+  border-color: rgba(190, 163, 106, 0.74);
+  background: rgba(190, 163, 106, 0.22);
+}
+
+.reviews-control span {
+  font-size: 1rem;
+  line-height: 1;
 }
 
 blockquote {
   position: relative;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
   margin: 0;
-  padding: 2.1rem 1rem 1rem;
+  padding: 1.9rem 0.85rem 0.85rem;
   border-radius: 12px;
   border: 1px solid var(--line);
   background: linear-gradient(160deg, #161619, #101013);
@@ -368,7 +417,7 @@ blockquote p {
 
 .contact-grid {
   display: grid;
-  gap: 1.2rem;
+  gap: 0.9rem;
 }
 
 .hours-list {
@@ -384,7 +433,7 @@ blockquote p {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.72rem 0.9rem;
+  padding: 0.58rem 0.8rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   color: #dfdfda;
 }
@@ -397,18 +446,18 @@ blockquote p {
   border: 1px solid var(--line);
   border-radius: 12px;
   overflow: hidden;
-  min-height: 320px;
+  min-height: 280px;
 }
 
 .map-wrap iframe {
   width: 100%;
   height: 100%;
   border: 0;
-  min-height: 320px;
+  min-height: 280px;
 }
 
 .final-cta {
-  padding: 4.25rem 0 4.5rem;
+  padding: 3rem 0 3.2rem;
   background:
     radial-gradient(circle at 10% 10%, rgba(190, 163, 106, 0.16), transparent 42%),
     radial-gradient(circle at 85% 20%, rgba(190, 163, 106, 0.12), transparent 40%),
@@ -418,7 +467,7 @@ blockquote p {
 .cta-wrap {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
-  padding: 1.4rem;
+  padding: 1.1rem;
   background: rgba(255, 255, 255, 0.02);
   text-align: center;
 }
@@ -429,7 +478,7 @@ blockquote p {
 }
 
 .footer-wrap {
-  min-height: 72px;
+  min-height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -500,7 +549,7 @@ blockquote p {
   }
 
   .section {
-    padding: 5.5rem 0;
+    padding: 4rem 0;
   }
 
   .split {
@@ -513,8 +562,8 @@ blockquote p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .reviews-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  blockquote {
+    flex-basis: calc(50% - 0.35rem);
   }
 
   .contact-grid {
@@ -528,12 +577,12 @@ blockquote p {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .reviews-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  blockquote {
+    flex-basis: calc(33.333% - 0.47rem);
   }
 
   .cta-wrap {
-    padding: 2rem;
+    padding: 1.6rem;
   }
 }
 

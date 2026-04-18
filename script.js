@@ -37,3 +37,27 @@ window.addEventListener("load", () => {
   document.body.classList.add("page-ready");
   document.body.classList.remove("is-loading");
 });
+
+const reviewsTrack = document.getElementById("reviewsTrack");
+const reviewsPrev = document.getElementById("reviewsPrev");
+const reviewsNext = document.getElementById("reviewsNext");
+
+if (reviewsTrack && reviewsPrev && reviewsNext) {
+  const getScrollStep = () => {
+    const firstCard = reviewsTrack.querySelector("blockquote");
+    if (!firstCard) {
+      return 320;
+    }
+
+    const gap = parseFloat(getComputedStyle(reviewsTrack).gap) || 0;
+    return firstCard.getBoundingClientRect().width + gap;
+  };
+
+  reviewsPrev.addEventListener("click", () => {
+    reviewsTrack.scrollBy({ left: -getScrollStep(), behavior: "smooth" });
+  });
+
+  reviewsNext.addEventListener("click", () => {
+    reviewsTrack.scrollBy({ left: getScrollStep(), behavior: "smooth" });
+  });
+}

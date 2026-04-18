@@ -220,7 +220,11 @@
         <p class="eyebrow">Client Reviews</p>
         <h2>What Clients Are Saying</h2>
 
-        <div class="reviews-grid">
+        <div class="reviews-carousel" id="reviewsCarousel" aria-label="Client reviews carousel">
+          <button class="reviews-control prev" id="reviewsPrev" type="button" aria-label="Previous review">
+            <span aria-hidden="true">&#10094;</span>
+          </button>
+          <div class="reviews-track" id="reviewsTrack">
           <blockquote>
             <h3>Chris Lally</h3>
             <p>"I've been going to this barbershop for over 10 years and the owner Alex is great! He is an experienced barber with a very friendly attitude. Between Alex and Vlad, both have cut mine and my son's hair, providing a professional haircut at a consistent barbershop!"</p>
@@ -241,6 +245,10 @@
             <h3>Andy Linder</h3>
             <p>"I've been coming to Vlad for 5 years - best haircut! Even after moving out of Chelsea / West Village I still come."</p>
           </blockquote>
+          </div>
+          <button class="reviews-control next" id="reviewsNext" type="button" aria-label="Next review">
+            <span aria-hidden="true">&#10095;</span>
+          </button>
         </div>
       </div>
     </section>
