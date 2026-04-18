@@ -292,11 +292,18 @@ p {
 }
 
 .section-dark {
-  background:
-    linear-gradient(140deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01)),
-    var(--panel);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+}
+
+main > section:not(#home),
+.site-footer {
+  background-image:
+    linear-gradient(145deg, rgba(8, 8, 10, 0.82), rgba(12, 12, 14, 0.78)),
+    url("./Background2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .section-intro {
@@ -479,7 +486,6 @@ blockquote p {
 
 .site-footer {
   border-top: 1px solid var(--line);
-  background: #080809;
 }
 
 .footer-wrap {
